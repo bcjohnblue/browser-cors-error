@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chrome CORS error demo page (good-1)</title>
+    <script>
+      // The "Origin" request header is included
+      window.onload = function () {
+        setTimeout(() => {
+          const img = document.createElement('img');
+          img.setAttribute(
+            'src',
+            'https://rjzdhlvuuafqvgoyticm.supabase.co/functions/v1/getCORSImage?image=building.jpg'
+          );
+          img.setAttribute('crossOrigin', 'anonymous');
+          document.body.appendChild(img);
+        }, 0);
+      };
+    </script>
+  </head>
+
+  <body>
+    <div>The "Origin" request header is included</div>
+  </body>
+</html>

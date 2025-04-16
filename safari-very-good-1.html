@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safari CORS error demo page (very-good-1)</title>
+    <script>
+      // The "Origin" request header is included
+      // Image can be cached
+      window.onload = function () {
+        setTimeout(() => {
+          const img = document.createElement('img');
+          img.crossOrigin = 'anonymous';
+          img.src =
+            'https://rjzdhlvuuafqvgoyticm.supabase.co/functions/v1/getCORSImage?image=building.jpg';
+          document.body.appendChild(img);
+        }, 0);
+      };
+    </script>
+  </head>
+
+  <body>
+    <div>Send double request</div>
+    <div>- Request 1. The "Origin" header is included</div>
+    <div>- Request 2. The "Origin" header is not included</div>
+    <div>Image can be cached</div>
+  </body>
+</html>
